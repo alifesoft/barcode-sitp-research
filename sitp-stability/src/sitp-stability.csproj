@@ -1,0 +1,60 @@
+<Project>
+	<PropertyGroup>
+		<MSBuildProjectExtensionsPath>obj\sitpstability</MSBuildProjectExtensionsPath>
+		<BaseIntermediateOutputPath>obj\sitpstability</BaseIntermediateOutputPath>
+		<DefaultItemExcludes>$(DefaultItemExcludes);obj\**</DefaultItemExcludes>
+	</PropertyGroup>
+	<Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+	
+	<PropertyGroup>
+		<Configurations>Debug;Release</Configurations>
+		<DefineConstants>$(DefineConstants)</DefineConstants>
+		<AssemblyName>sitp-stability</AssemblyName>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>Alifesoft.SITPResearch</RootNamespace>
+		<StartupObject>Alifesoft.SITPResearch.SitpStabilityProgram</StartupObject>		
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+		<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>		
+	</PropertyGroup>
+	
+	<!--Warnings and other-->
+	<PropertyGroup>
+		<NoWarn>$(NoWarn)</NoWarn>
+	</PropertyGroup>	
+	
+	<!--Build type section-->
+	<PropertyGroup Condition="$(Configuration.Contains('Debug'))">
+		<Optimize>False</Optimize>
+		<DebugSymbols>True</DebugSymbols>
+		<DebugType>full</DebugType>
+		<DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+		<OutputPath>..\debug\</OutputPath>
+	</PropertyGroup>
+	<PropertyGroup Condition="$(Configuration.Contains('Release'))">
+		<Optimize>True</Optimize>
+		<DebugSymbols>False</DebugSymbols>
+		<DebugType>none</DebugType>
+		<OutputPath>..\release\</OutputPath>		
+	</PropertyGroup>
+	
+	<!--Reference to required libraries-->
+	<ItemGroup>
+		<!--<PackageReference Include="SkiaSharp" Version="3.119.2" />-->
+	</ItemGroup>		
+	
+	<!--exclude code from sitp-stability application-->
+	<ItemGroup>
+		<Compile Remove="tryout\**" />
+		<EmbeddedResource Remove="tryout\**" />
+		<None Remove="tryout\**" />
+	</ItemGroup>
+	
+	<Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+</Project>
