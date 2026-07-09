@@ -1,0 +1,35 @@
+# SITP Encode/Decode Performance Test
+
+The test measures the average execution time of complete SITP message encoding and decoding operations.
+The measured time includes memory allocation, generation of the LCG mask, XOR masking, CRC calculation or validation, and message object construction.
+A preliminary cold run is performed before each measurement and is not included in the reported results.
+
+## Test environment
+
+Ryzen 9 9900X, single core
+
+- Random payload seed: `0x53495450`
+
+## Mode11
+
+- Payload size: 63 bytes
+- Encoded message size: 65 bytes
+- Iterations: 100000
+- Average encode time: 0.199 microseconds
+- Average decode time: 0.170 microseconds
+
+## Mode10
+
+- Payload size: 16383 bytes
+- Encoded message size: 16387 bytes
+- Iterations: 1000
+- Average encode time: 47.708 microseconds
+- Average decode time: 47.844 microseconds
+
+## Mode01
+
+- Payload size: 4194303 bytes
+- Encoded message size: 4194310 bytes
+- Iterations: 100
+- Average encode time: 13173.006 microseconds
+- Average decode time: 13147.603 microseconds

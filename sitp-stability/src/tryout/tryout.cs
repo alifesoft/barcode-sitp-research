@@ -7,7 +7,9 @@ namespace Alifesoft.SITPResearch
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            OutputPath.GetRootFolderPath();
+            TestEncodeDecodeSITPMessages.ReadWriteSITPMessagesAndStoreInXML("MainTests");
+
+            Console.ReadLine();
         }
     }
 }

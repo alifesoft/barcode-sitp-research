@@ -50,7 +50,7 @@ sitp-stability/output/
 **Oleksandr Havryliuk**
 Alternative transliteration: Alexander Gavriluk
 
-Academic contact: [o.havryliuk@kpi.ua](mailto:o.havryliuk@kpi.ua)
+Academic contact: [o.havryliuk@kpi.ua](mailto:o.havryliuk@kpi.ua)\
 General contact: [alifesoft@gmail.com](mailto:alifesoft@gmail.com)
 
 ## Licensing

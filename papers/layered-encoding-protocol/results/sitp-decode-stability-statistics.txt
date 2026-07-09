@@ -1,0 +1,38 @@
+# SITP Decode Stability Statistics
+
+The source dataset contains random binary data and does not include intentionally encoded SITP messages.
+Therefore, every successfully decoded SITP message is treated as a false-positive detection.
+
+- Dataset size: 16777216 bytes
+- Total detected messages: 16122
+
+## Mode11
+
+- Detected messages: 16074
+- False-positive detections: 16074
+- False-positive detections per byte: 0.0009580850601
+- Average bytes per false-positive detection: 1043.749
+- Minimum encoded message size: 2 bytes
+- Average encoded message size: 33.384 bytes
+- Maximum encoded message size: 65 bytes
+
+## Mode10
+
+- Detected messages: 48
+- False-positive detections: 48
+- False-positive detections per byte: 2.861022949E-06
+- Average bytes per false-positive detection: 349525.333
+- Minimum encoded message size: 155 bytes
+- Average encoded message size: 7506.062 bytes
+- Maximum encoded message size: 16350 bytes
+
+## Mode01
+
+- Detected messages: 0
+- False-positive detections: 0
+- False-positive detections per byte: 0
+- Average bytes per false-positive detection: N/A
+- Minimum encoded message size: N/A
+- Average encoded message size: N/A
+- Maximum encoded message size: N/A
+

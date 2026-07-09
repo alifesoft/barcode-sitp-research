@@ -3,3 +3,4 @@ obj/
 .vs
 release/
 debug/
+output/

@@ -2,18 +2,18 @@
 
 namespace Alifesoft.SITPResearch
 {
-    internal interface IStorageSave
+    internal interface IDataSave
     {
         void Save(bool immediately);
     }
 
-    internal abstract class StorageSaverCommon : IStorageSave
+    internal abstract class DataSaverCommon : IDataSave
     {
         //int milliseconds
         protected int _saveTimeout;
         protected long _savedTime = 0;
 
-        internal StorageSaverCommon(int saveTimeout = 10000)
+        internal DataSaverCommon(int saveTimeout = 10000)
         {
             _saveTimeout = saveTimeout;
         }
@@ -33,31 +33,12 @@ namespace Alifesoft.SITPResearch
             }
             return false;
         }
-        
+
         protected abstract void SaveInternal();
         public virtual void Save(bool immediately)
         {
             if (IsRequireToSave(immediately))
                 SaveInternal();
-        }
-    }
-
-    internal class StorageSaverXml: StorageSaverCommon
-    {
-        protected string _filename;
-
-        public StorageSaverXml(string filename) : this(filename, 10000)
-        {
-        }
-
-        public StorageSaverXml(string filename, int saveTimeout) : base (saveTimeout)
-        {
-            _filename = filename;
-        }
-        
-        protected override void SaveInternal()
-        {
-            //save to xml
         }
     }
 }
